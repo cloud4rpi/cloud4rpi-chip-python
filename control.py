@@ -25,6 +25,7 @@ from os import uname
 from socket import gethostname
 from time import sleep
 import sys
+import random
 import cloud4rpi
 import chip
 import ds18b20
