@@ -54,7 +54,7 @@ def main():
     # load w1 modules
     ds18b20.init_w1()
 
-    # Detect DS18B20 temperature sensors. 
+    # Detect DS18B20 temperature sensors.
     ds_sensors = ds18b20.DS18b20.find_all()
 
     # Put variable declarations here
