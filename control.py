@@ -50,6 +50,18 @@ def led_control(value):
 GPIO.setup(LED_PIN, GPIO.OUT)
 
 
+def listen_for_events():
+    # write your own logic here
+    result = random.randint(1, 5)
+    if result == 1:
+        return 'RING'
+
+    if result == 5:
+        return 'BOOM!'
+
+    return 'IDLE'
+
+
 def main():
     # load w1 modules
     ds18b20.init_w1()
@@ -75,6 +87,10 @@ def main():
         'CPU Temp': {
             'type': 'numeric',
             'bind': chip.cpu_temp
+        },
+        'STATUS': {
+            'type': 'string',
+            'bind': listen_for_events
         }
     }
 
