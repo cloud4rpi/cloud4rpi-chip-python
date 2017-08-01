@@ -72,7 +72,6 @@ def main():
             'value': False,
             'bind': led_control,
         },
-
         'CPU Temp': {
             'type': 'numeric',
             'bind': chip.cpu_temp
