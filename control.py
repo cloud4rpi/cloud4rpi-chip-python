@@ -1,16 +1,17 @@
 # -*- coding: utf-8 -*-
-
 #
 # Cloud4RPi Example for Next Thing Co. C.H.I.P.
 # =============================================
-# 
-# This example demonstrates different scenarios of using Cloud4RPi service on C.H.I.P.:
-# 
+#
+# This example demonstrates different scenarios of using Cloud4RPi service
+# on C.H.I.P.:
+#
 # - Monitoring events
 # - Controling a GPIO pin
 # - Monitoring temperature with the DS18B20 sensor
-# 
-# For complete instructions on how to run this example, refer to the [How To](https://cloud4rpi.github.io/docs/howto/) article.
+#
+# For complete instructions on how to run this example, refer
+# to the [How To](https://cloud4rpi.github.io/docs/howto/) article.
 #
 # The DS18B20 sensor should be connected as follows:
 #
