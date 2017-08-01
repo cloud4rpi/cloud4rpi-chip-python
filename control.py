@@ -1,5 +1,11 @@
 # -*- coding: utf-8 -*-
 
+#  / GND |────────────> GND
+# | DATA |─────────┬──> LCD-D2
+#  \ VCC |─┬─[4k7]─┘
+#          └──────────> 5V
+#  DS18B20 (bottom view)
+
 from os import uname
 from socket import gethostname
 from time import sleep
@@ -15,30 +21,25 @@ import CHIP_IO.GPIO as GPIO  # pylint: disable=F0401
 # sign up at https://cloud4rpi.io and create a device.
 DEVICE_TOKEN = '__YOUR_DEVICE_TOKEN__'
 
-#  / GND |────────────> GND
-# | DATA |─────────┬──> LCD-D2
-#  \ VCC |─┬─[4k7]─┘
-#          └──────────> 5V
-#  DS18B20 (bottom view)
-
 # Constants
+LED_PIN = 'XIO-P0'
 DATA_SENDING_INTERVAL = 30  # secs
 DIAG_SENDING_INTERVAL = 60  # secs
 POLL_INTERVAL = 0.5  # secs
 
 
-def P0_control(value):
-    GPIO.output('XIO-P0', value)
-    return GPIO.input('XIO-P0')
+def led_control(value):
+    GPIO.output(LED_PIN, value)
+    return GPIO.input(LED_PIN)
 
-GPIO.setup('XIO-P0', GPIO.OUT)
+GPIO.setup(LED_PIN, GPIO.OUT)
 
 
 def main():
     # load w1 modules
     ds18b20.init_w1()
 
-    # Detect DS18B20 temperature sensors
+    # Detect DS18B20 temperature sensors. 
     ds_sensors = ds18b20.DS18b20.find_all()
 
     # Put variable declarations here
@@ -51,10 +52,10 @@ def main():
         #     'type': 'numeric',
         #     'bind': ds_sensors[1]
         # },
-        'XIO-P0': {
+        'LED On': {
             'type': 'bool',
             'value': False,
-            'bind': P0_control,
+            'bind': led_control,
         },
 
         'CPU Temp': {
