@@ -5,7 +5,8 @@ python:
   - "3.3"
   - "3.4"
   - "3.5"
-
+  - "3.6"
+  
 install: make init
 
 script: make ci
@@ -14,4 +15,5 @@ notifications:
   slack:
     on_success: change
     on_failure: always
-    secure: izYanD3IRqq9BQhj+IwTwaO32V1ZHj3EcQUKpfKZ4A5xWXTlnMtc0BOi2duDoqAUMqI1NqTBeoOw9WvAM1ByERqWDuz4JBd2Suii9cN/xAuDZ9ISyvvQ2LMYjpstr5cwQLU5gg00wRF9k2o8KMorUzOQQZAZFzV4BTBjGs5fNo8blbR7ae1tQ6dHERCmmlR5iUGdI3ThUgr6koguSTZydHqt4fEG/XJQ8L7iamhveAuJbHXj5FJt0tnhm4RF0eQg4BKBcXTAz/qTA1VXYZnuGtT9XgGWFxY+cjk9//ky8omnDY8Flh9nh7b+8fk81X04xHDWQol+4dOi+uuN+NcGifVDQ0YPQXh6aHYryddfoWvuq7u6pPIAWogHZXEXOIsGUNpTmaHzNqPaKW1y5jgcyvH4ezLAdPKxqcMH4wWyIRBuLdabURLRdO9kdve5AGkPo1jxCgTu/4dKJkgslunQpjfcBtpRWg3s696RSIYBLEupH/QKBEQTfr0doNRQYBE14XVJp6U2H39m44cVQ3tveq/83iZSFqdmPJcYNjJXj4uxE2/DvazOT8oRbXx8z3HwyX+OrMTDRA0x20ks9Zj/CmYRd9roQFHz43xe1PS8zfjUPvn1sD+zLILZOpINwzO2uUBjfEDMDIAvWkFHHgUZeFTBMDWyXhIz4LTBV26SVRs=
+    rooms:
+      secure: vnHFaOrwEL2bFtsp9p4rQagEQM/+87stEnEzk9wUtVrzka7ot+vAmXgZgkciWDEZSfl3psmn9CDJbejdXHLSvpfU7IGORf7VZAGl9DRWDIcMrRHsYjXhqNQC4c0BYqypit6HtawjoYbLToaT1BAeT1Cjfe9aKjTRV7fGBg4phOtXn+7r1L818gEx+/2rDQHsddZa3bELc/bWplyTDHu6UVAoeUv7+P2b7lVcPB/es8xToULBa8CAYjxhXh9k9+fbZ1h/jmxKVtuj+J2N8a7OPEwCVISVT4NyBFe6rjkfQPEdhil7ev28cCbJZnWdaK2Fi5pK7ZgylG06UyCqjksbY+koVwjMI2RlVUcp5ZGa137UjS4DlnaaS9tgvOQ89aYZDhit150EnfJutA94ykNAvC6eYfgdIUWVRjs8aa/HYtsGgeoNMAktGt+VUjT+vzu8QErEuU5H6ET68TxwKnB7QVLX26h7cYtptQaI6bONUMPsjfxyzI4tHhP32mQMFiihIi6USnDyiVkG2OqmDMzlXx/Oc4TobrbQ9PQBwVBSeOIisPiWAurTftc2GczDBDG7zCzNHzJQXVURg6JtWWgUn8tx0CWU3chz4QOuHCSEfmdNGpj/F9E4N7g/yFDqr/UVCZd9SA6cc26hSPXHYmCLMi66L3jTPfM+UhU4Td9jP6I=
