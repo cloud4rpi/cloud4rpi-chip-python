@@ -8,7 +8,7 @@ Cloud4RPi Examples for [Next Thing Co. C.H.I.P.](https://getchip.com/pages/chip)
 
 ## See Also
 
-* [Examples for Raspberry Pi](https://github.com/cloud4rpi/raspberrypi-examples)
-* [Examples for Onion Omega2](https://github.com/cloud4rpi/omega2-examples)
+* [Examples for Raspberry Pi](https://github.com/cloud4rpi/cloud4rpi-raspberrypi-python)
+* [Examples for Onion Omega2](https://github.com/cloud4rpi/cloud4rpi-omega2-python)
 * [Client Library](https://github.com/cloud4rpi/cloud4rpi)
 * [Documentation Repository](https://github.com/cloud4rpi/docs)
