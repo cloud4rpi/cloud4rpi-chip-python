@@ -12,7 +12,7 @@ Cloud4RPi Examples for [Next Thing Co. C.H.I.P.](https://getchip.com/pages/chip)
     sudo pip install --upgrade setuptools
     ```
 2. If you are going to use GPIO, install the **CHIP_IO** library using the instructions from the [CHIP_IO repository](https://github.com/xtacocorex/CHIP_IO).
-2. Install the Cloud4RPi client Library:
+2. Install the Cloud4RPi client library:
     ```sh
     sudo pip install cloud4rpi
     ```
