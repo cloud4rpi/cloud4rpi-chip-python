@@ -39,7 +39,7 @@ Cloud4RPi Examples for [Next Thing Co. C.H.I.P.](https://getchip.com/pages/chip)
 
 You can use this control panel to monitor variables and control a logical state on a hardware pin.
 
-![](https://github.com/cloud4rpi/docs/blob/master/docs/panel.png)
+![](https://github.com/cloud4rpi/docs/raw/master/example-img/panel.png)
 
 
 
