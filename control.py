@@ -48,6 +48,7 @@ def led_control(value):
     GPIO.output(LED_PIN, value)
     return GPIO.input(LED_PIN)
 
+
 GPIO.setup(LED_PIN, GPIO.OUT)
 
 
