@@ -1,5 +1,7 @@
 # -*- coding: utf-8 -*-
 
+from os import uname
+from socket import gethostname
 import subprocess
 
 
@@ -16,3 +18,11 @@ def ip_address():
     except Exception:
         output = 'error'
     return output
+
+
+def host_name():
+    return gethostname()
+
+
+def os_name():
+    return " ".join(uname())
