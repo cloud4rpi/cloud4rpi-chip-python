@@ -17,11 +17,14 @@ DEVICE_TOKEN = '__YOUR_DEVICE_TOKEN__'
 # Constants
 LED_PIN = 'XIO-P0'
 
-# Decrease this value for testing purposes.
-DATA_SENDING_INTERVAL = 300  # secs
-
-DIAG_SENDING_INTERVAL = 60  # secs
+DATA_SENDING_INTERVAL = 60  # secs
+DIAG_SENDING_INTERVAL = 90  # secs
 POLL_INTERVAL = 0.5  # secs
+
+LOCATIONS = [
+    {'lat': 51.500741, 'lng': -0.124626},  # Big Ben, London, United Kingdom
+    {'lat': 40.689323, 'lng': -74.044503}  # Statue of Liberty, New York, USA
+]
 
 
 def led_control(value):
@@ -39,9 +42,17 @@ def listen_for_events():
         return 'RING'
 
     if result == 5:
-        return 'BOOM!'
+        return 'BOOM'
 
     return 'IDLE'
+
+
+def get_location():
+    return random.choice(LOCATIONS)
+
+
+def sensor_not_connected():
+    return 'Sensor not connected'
 
 
 def main():
@@ -52,16 +63,12 @@ def main():
     ds_sensors = ds18b20.DS18b20.find_all()
 
     # Put variable declarations here
-    # Available types: 'bool', 'numeric', 'string'
+    # Available types: 'bool', 'numeric', 'string', 'location'
     variables = {
         'Room Temp': {
-            'type': 'numeric',
-            'bind': ds_sensors[0] if ds_sensors else None
+            'type': 'numeric' if ds_sensors else 'string',
+            'bind': ds_sensors[0] if ds_sensors else sensor_not_connected
         },
-        # 'Outside Temp': {
-        #     'type': 'numeric',
-        #     'bind': ds_sensors[1]
-        # },
         'LED On': {
             'type': 'bool',
             'value': False,
@@ -74,6 +81,10 @@ def main():
         'STATUS': {
             'type': 'string',
             'bind': listen_for_events
+        },
+        'Location': {
+            'type': 'location',
+            'bind': get_location
         }
     }
 
@@ -82,7 +93,8 @@ def main():
         'CPU Temp': chip.cpu_temp,
         'IP Address': chip.ip_address,
         'Host': chip.host_name,
-        'Operating System': chip.os_name
+        'Operating System': chip.os_name,
+        'Client Version:': cloud4rpi.__version__
     }
 
     device = cloud4rpi.connect(DEVICE_TOKEN)
